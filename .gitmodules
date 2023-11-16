@@ -1,3 +1,6 @@
 [submodule "files/discord-bot"]
 	path = files/discord-bot
 	url = https://github.com/seba-ban/discord-bot.git
+[submodule "files/seen-places"]
+	path = files/seen-places
+	url = https://github.com/seba-ban/seen-places.git
