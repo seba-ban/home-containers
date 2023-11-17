@@ -3,6 +3,10 @@ resource "docker_image" "bot" {
   build {
     context = local.bot_dockerfile_context
   }
+
+  triggers = {
+    dir_sha1 = local.bot_dir_sha1
+  }
 }
 
 resource "docker_container" "bot" {

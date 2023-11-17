@@ -4,6 +4,9 @@ resource "docker_image" "seen_places" {
     context = local.seen_places_dockerfile_context
     target  = "production"
   }
+  triggers = {
+    dir_sha1 = local.seen_places_dir_sha1
+  }
 }
 
 resource "docker_image" "seen_places_garmin" {
@@ -12,6 +15,10 @@ resource "docker_image" "seen_places_garmin" {
     context = local.seen_places_garmin_dockerfile_context
     target  = "production"
   }
+
+  triggers = {
+    dir_sha1 = local.seen_places_dir_sha1
+  }
 }
 
 resource "docker_image" "seen_places_gopro" {
@@ -19,6 +26,9 @@ resource "docker_image" "seen_places_gopro" {
   build {
     context = local.seen_places_gopro_dockerfile_context
     target  = "production"
+  }
+  triggers = {
+    dir_sha1 = local.seen_places_dir_sha1
   }
 }
 
